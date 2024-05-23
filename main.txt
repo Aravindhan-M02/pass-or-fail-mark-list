@@ -1,1 +1,48 @@
+#include<iostream.h>
+class student
+{
+    protected:
+          int marks;
+    public:
+          void accept()
+          {
+              cout<<"Enter marks";
+              cin>>marks;
+          }
+};
+class test:public student
+{
+    protected:
+           int p=0;
+    public:
+          void check()
+          {
+              if(marks>60)
+                {
+                    p=1;
+                }
+          }
+};
 
+class result:public test
+{
+    public:
+          void print()
+          {
+              if(p==1)
+                 cout<<"you have passed";
+              else
+                 cout<<"failed";
+                 
+          }
+};
+
+int main()
+{
+    result r;
+    r.accept();
+    r.check();
+    r.print();
+    return 0;
+
+}
